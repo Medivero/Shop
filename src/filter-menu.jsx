@@ -1,17 +1,28 @@
 import react from "react";
+import { useState } from "react";
 
 function Filter( ){
+    const [state, setState] = useState(false);
+    const click = () =>{
+      setState(!state)
+    }
     return(
         <nav className="fixed-filter">
             <ul className="filter-menu">
-              <li className="filter-element">Grocceries ⯆</li>
-              <li className="filter-element">Premium fruits ⯆</li>
-              <li className="filter-element">Home &  Kitchen ⯆</li>
-              <li className="filter-element">Fashion ⯆</li>
-              <li className="filter-element">Electronics ⯆</li>
-              <li className="filter-element">Beauty ⯆</li>
-              <li className="filter-element">Home Improvement ⯆</li>
-              <li className="filter-element">Sports,Toys & Luggage ⯆</li>
+              <li>
+                <div onClick={click} className='filter-element image-cookies'>Печеньки</div>
+
+                <div className={`grocceries-box ${state ? 'open-filter' : 'close-filter'}`}>
+                  <ul>
+                    <li>1</li>
+                  </ul>
+                </div>
+              </li>
+              <li className="filter-element">Пончики</li>
+              <li className="filter-element">Торты </li>
+              <li className="filter-element">Напитки </li>
+              <li className="filter-element">Чай</li>
+              
             </ul>
           </nav>
     )

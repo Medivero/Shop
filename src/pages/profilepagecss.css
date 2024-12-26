@@ -1,0 +1,44 @@
+.profile-main-container{
+    display: flex;
+    height: fit-content;
+    background-color: rgb(240, 240, 240);
+    padding: 40px 50px;
+    flex-direction: column;
+    gap: 10px;
+}
+.title-profile-info{
+    text-align: center;
+    height: 50px;
+    font-size: 200%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px 20px;
+    background-color: white;
+    border-radius: 25px;
+}
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: white;
+    height: fit-content;
+    width: 80%;
+    border-radius: 25px;
+    padding: 40px 50px;
+}
+.profile-element{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 150%;
+    background-color: wheat;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+.quitprofile{
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 150%;
+    background-color: rgb(255, 66, 66);
+    color: white;
+}

@@ -6,9 +6,9 @@ function WidgetList2(){
         <div className="product-list-main-2">
             <label className="text-before-plist-2">
               <div>
-                Shop from <b className="smartphones">Top Categories</b>
+                Выбери свой <b className="smartphones">Любимый напиток</b>
               </div>
-              <div><a href="#">View all &#128073;</a></div>
+              <div><a href="#">Посмотреть все &#128073;</a></div>
             </label>
             <ul className="product-list-container-2">
               <div>

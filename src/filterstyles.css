@@ -1,0 +1,53 @@
+.filter-element{
+    user-select: none;
+    border: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.image-cookies{
+    background-image: none;
+}
+.image-cookies:hover{
+    color: white;
+    background-image: url(/src/assets/6ad126eb-5001-4719-8bac-8af8733ca1db.jpeg);
+    background-repeat: no-repeat;
+}
+.grocceries-box{
+    transform: translateY(5px);
+    position: absolute;
+    overflow: hidden;
+    height: 0px;
+    width: 90px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 12px;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.open-filter{
+    height: 200px;
+}
+.close-filter{
+    height: 0;
+}
+.filter-menu{
+    padding: 0px 100px;
+    display: flex;
+    height: 50px;
+    border-bottom: 0.5mm solid rgb(231, 171, 51);
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter-element{
+    flex: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    font-size: 100%;
+    background-color: rgb(255, 200, 89);
+    border-radius: 15px;
+    width: fit-content;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+}
