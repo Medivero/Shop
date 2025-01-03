@@ -4,13 +4,15 @@ import Signmenu from "../signmenu";
 import Filter from "../filter-menu";
 import './profilepagecss.css';
 import Footer1 from "../footer";
+import MainMenu from "../main-menu";
+import PreLoader from "../preloader";
 
 function ProfilePage(){
    const [nickname, setNickname] = useState('none')
    const [address, setAddress] = useState('none')
    const [email, setEmail] = useState('none')
    const [wallet, setWallet] = useState('none')
-    const url = `http://192.168.3.5:5000/api/User/GetById/${document.cookie}`
+    const url = `http://194.58.34.224:14342/api/User/GetById/${document.cookie}`
     fetch(url, {
       method: 'GET'
     })
@@ -26,36 +28,8 @@ function ProfilePage(){
     }
     return (
         <>
-        <div className="position-menu">
-        <Header1/>
-          <nav>
-            <ul className="main-menu">
-              <button className="menu-button">
-                <b>___</b>
-                <b>__</b>
-                <b>_</b>
-              </button>
-              <li className="title-menu">
-                <a href="/">Mediv's shop</a>
-              </li>
-              <li>
-                <div className="search-info">
-                  <div className="find"></div>
-                  <input type="text" placeholder="Поиск..." className="search-info-input"></input>
-                  <div className="dots"></div>
-                </div>
-              </li>
-              <Signmenu/>
-              |
-              <li className="cart">
-                <a href="/Cart">Корзина</a>
-              </li>
-            </ul>
-          </nav>
-          <Filter/>
-      </div>
-      <div className="empty-box">
-      </div>
+        <PreLoader></PreLoader>
+        <MainMenu/>
         <main className="profile-main-container">
           <div className="title-profile-info">Информация о профиле</div>
             <div className="profile-container">

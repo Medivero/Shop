@@ -9,20 +9,21 @@ function Filter( ){
     return(
         <nav className="fixed-filter">
             <ul className="filter-menu">
-              <li>
-                <div onClick={click} className='filter-element image-cookies'>Печеньки</div>
-
-                <div className={`grocceries-box ${state ? 'open-filter' : 'close-filter'}`}>
-                  <ul>
-                    <li>1</li>
-                  </ul>
-                </div>
-              </li>
-              <li className="filter-element">Пончики</li>
-              <li className="filter-element">Торты </li>
-              <li className="filter-element">Напитки </li>
-              <li className="filter-element">Чай</li>
-              
+              <a href="/category/1" className="filter-element">
+               <li>Печеньки</li>
+              </a>
+              <a href="/category/2" className="filter-element">
+               <li>Пончики</li>
+              </a>
+              <a href="/category/3" className="filter-element">
+              <li>Торты </li>
+              </a>
+              <a className="filter-element" href="/category/4">
+              <li>Напитки </li>
+              </a>
+              <a className="filter-element" href="/category/5">
+                <li>Чай</li>
+              </a>
             </ul>
           </nav>
     )

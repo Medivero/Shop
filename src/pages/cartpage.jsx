@@ -5,51 +5,47 @@ import Filter from "../filter-menu";
 import Footer1 from "../footer";
 import './cartpagestyles.css'
 import { data } from "react-router-dom";
+import MainMenu from "../main-menu";
+import PreLoader from "../preloader";
 
 function CartPage(){
+  
+  const [state, setState] = useState(0)
+  const [address, setAddress] = useState('none')
+  const handleclick = () => {
+    setState(!state)
+  }
   const defaultValue = []
   const [category, setCategory] = useState(defaultValue)
   const getApiDataUser = async () => {
-      const res = await fetch('http://192.168.3.5:5000/api/User/GetById/2')
+      const res = await fetch(`http://194.58.34.224:14342/api/User/GetById/${document.cookie}`)
       .then((res)=> res.json())
-
-      setCategory(res)
+      .then((data) => {
+        setAddress(data.address)
+      })
   }
   useEffect(()=>{
     getApiDataUser();
   }, [])
     return(
         <>
-            <div className="position-menu">
-        <Header1/>
-          <nav>
-            <ul className="main-menu">
-              <button className="menu-button">
-                <b>___</b>
-                <b>__</b>
-                <b>_</b>
-              </button>
-              <li className="title-menu">
-                <a href="/">Mediv's shop</a>
-              </li>
-              <li>
-                <div className="search-info">
-                  <div className="find"></div>
-                  <input type="text" placeholder="Поиск..." className="search-info-input"></input>
-                  <div className="dots"></div>
-                </div>
-              </li>
-              <Signmenu></Signmenu>
-              |
-              <li className="cart">
-                <a href="/Cart">Корзина</a>
-              </li>
-            </ul>
-          </nav>
-          <Filter></Filter>
-      </div>
-      <div className="empty-box"></div>
+        <PreLoader></PreLoader>
+        <MainMenu/>
       <main className="main-cart-bg">
+        <div className={`oplata-menu ${state ? 'oplata-menu-open' : 'oplata-menu-close'}`}>
+          <form action="">
+            <legend className="address-box">
+              Адрес:
+              <input className="address-box" type="text" value={address}/>
+              Нажмите чтобы изменить
+            </legend>
+          </form>
+          <div>
+            Сумма:
+          </div>
+          <div>Способ оплаты: </div>
+          <button>Оплатить</button>
+        </div>
         <div className="cart-text-cart">Корзина</div>
         <div className="cart-box-container">
             <section className="cart-box-cart">
@@ -58,7 +54,19 @@ function CartPage(){
                   {category.email}
                 </div>
             </section>
-            <div className="cart-payment-box"></div>
+            <div className="cart-payment-box">
+              <div className="oplata-title">
+                Оплата
+              </div>
+              <div>
+                Общая сумма:
+              </div>
+              <div className="button-oplata-box">
+                <button onClick={handleclick} className="button-oplata">
+                  Перейти к оплате
+                </button>
+              </div>
+            </div>
         </div>
       </main>
       <Footer1/>

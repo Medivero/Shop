@@ -9,11 +9,11 @@
 }
 .empty-box{
     background-color: white;
-    height: 200px;
+    height: 170px;
 }
 .header-info{
     height: 33px;
-    width: 100%;
+    
     background-color: rgb(227, 227, 227);
 }
 .header-text{
@@ -51,12 +51,32 @@ a{
 }
 .main-menu{
     display: grid;
-    height: 90px;
+    height: fit-content;
+    padding: 20px 50px;
     border-bottom: 0.5mm solid rgb(231, 171, 51);
     align-items: center;
-    grid-template-columns: 0;
     grid-template-columns: 0.7fr 5fr 5fr 1fr 0.3fr 1fr;
     gap: 20px;
+    
+}
+@media (max-width:400px){
+    .position-menu{
+        position: static;
+    }
+    .header-info{
+        display: none;
+    }
+    .main-menu{
+        display: flex;
+        padding: 20px 100px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu-button{
+        visibility: hidden;
+    }
+    
 }
 li{
     list-style-type: none;
@@ -77,6 +97,10 @@ li{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 200%;
     color: rgb(231, 171, 51);
+    transition: 0.5s;
+}
+.title-menu:hover{
+    color: rgb(255, 216, 23);
 }
 .search-info{
     display: flex;
@@ -90,21 +114,62 @@ li{
     scale: 150%;
 }
 .find{
-    content: url(assets/find-svgrepo-com.svg);
-    padding-left: 6px;
+    font-size: 50%;
+    padding: 0;
+    height: 25px;
+    position: relative;
+    top: 5px;
+    width: 25px;
+    background-image: url('./assets/find-svgrepo-com.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.find:hover{
+    scale: 110%;
+}
+.box-search-result{
+    overflow: hidden;
+    height: fit-content;
+    position: absolute;
+    background-color: rgb(255, 208, 113);
+    width: 450px;
+    border-radius: 5px;
+    transform: translate(-75px,10px);
+    font-size: 20px;
+    padding: 10px;
+    color: rgb(252, 252, 252);
+    transition: 0.5s;
+}
+.box-result-open{
+    height: 50px;
+    height: fit-content;
+}
+.box-result-close{
+    padding: 0;
+    height: 0px;
+}
+.text-result-search{
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
 }
 .dots{
     content: url(assets/dots-9-svgrepo-com.svg);
     padding-right: 6px;
+    cursor: pointer;
 }
 .search-info-input{
+    display: flex;
     width: 100%;
     border: 0;
     background-color: transparent;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 80%;
-
 }
+
 .cart{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: grey;
@@ -179,7 +244,10 @@ li{
     position: static;
     display: flex;
     background-color: white;
+    flex-direction: column;
     z-index: -3;
+    
+    align-items: center;
 }
 .product-list-element:hover{
     box-shadow: 0px 2px 10px 1px rgb(231, 171, 51);

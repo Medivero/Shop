@@ -104,3 +104,32 @@
     flex-direction: column;
     align-items: center;
 }
+.other-space{
+    position: fixed;
+    text-align: center;
+    z-index: 8;
+    height: 2000px;
+    width: 2000px;
+    opacity: 0;
+}
+.space-exist{
+    visibility: visible;
+}
+.space-not-exist{
+    visibility: hidden;
+}
+.input-reg-element{
+    font-size: 50%;
+    border: 0;
+    border-bottom: 1px solid;
+}
+.button-reg-element{
+    border: 0;
+    font-size: 50%;
+    cursor: pointer;
+    background-color: rgb(136, 136, 252);
+    color: white;
+}
+.button-reg-element:hover{
+    background-color: blue;
+}
